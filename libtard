@@ -1,0 +1,17 @@
+#!/bin/sh
+# libre tar daemon
+# needs wendy
+
+ROOT="${1:-${HOME}/tmp/libtardd}"
+EROOT="${2:-${HOME}/tmp/libtarde}"
+
+[ ! -d "${ROOT}"  ] && exit 1
+
+[ ! -d "${EROOT}" ] && mkdir -p "${EROOT}"
+
+export ROOT EROOT
+
+~/usr/repos/wendy/wendy -f "${ROOT}" -m 256 sh -c \
+    'case "${WENDY_INODE}" in
+    (*\.tar*) tar -x -f "${ROOT}/${WENDY_INODE}" -C "${EROOT}" ;;
+    esac'
