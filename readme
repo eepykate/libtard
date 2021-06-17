@@ -1,6 +1,7 @@
          libtard
 the only libre tar daemon
 
-code by viz (https://github.com/vizs)
-name by gk  (https://github.com/6gk)
+code by viz      (https://github.com/vizs)
+name by gk       (https://github.com/6gk)
+depends on wendy (http://git.z3bra.org/wendy)
 made in late 2019
